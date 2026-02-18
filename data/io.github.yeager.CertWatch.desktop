@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Cert Watch
+Comment=TLS Certificate Monitor
+Exec=cert-watch
+Icon=io.github.yeager.CertWatch
+Terminal=false
+Type=Application
+Categories=Network;Security;GTK;
+Keywords=certificate;tls;ssl;monitor;
