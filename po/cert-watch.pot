@@ -1,0 +1,134 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-18 10:19+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/cert_watch/app.py:117
+msgid "Toggle theme"
+msgstr ""
+
+#: src/cert_watch/app.py:122
+msgid "Export JSON"
+msgstr ""
+
+#: src/cert_watch/app.py:123
+msgid "Export CSV"
+msgstr ""
+
+#: src/cert_watch/app.py:124
+msgid "About"
+msgstr ""
+
+#: src/cert_watch/app.py:128
+msgid "Refresh all"
+msgstr ""
+
+#: src/cert_watch/app.py:146
+msgid "Enter domain (e.g. example.com)"
+msgstr ""
+
+#: src/cert_watch/app.py:149
+msgid "Add"
+msgstr ""
+
+#: src/cert_watch/app.py:153
+msgid "Remove selected"
+msgstr ""
+
+#: src/cert_watch/app.py:177 src/cert_watch/app.py:257
+msgid "Select a domain to view details"
+msgstr ""
+
+#: src/cert_watch/app.py:185
+msgid "Ready"
+msgstr ""
+
+#: src/cert_watch/app.py:277
+msgid "Error"
+msgstr ""
+
+#: src/cert_watch/app.py:277
+msgid "Checked"
+msgstr ""
+
+#: src/cert_watch/app.py:280
+msgid "Certificate"
+msgstr ""
+
+#: src/cert_watch/app.py:281
+msgid "Common Name"
+msgstr ""
+
+#: src/cert_watch/app.py:282
+msgid "Issuer (Org)"
+msgstr ""
+
+#: src/cert_watch/app.py:283
+msgid "Issuer (CN)"
+msgstr ""
+
+#: src/cert_watch/app.py:284
+msgid "Serial"
+msgstr ""
+
+#: src/cert_watch/app.py:285
+msgid "Not Before"
+msgstr ""
+
+#: src/cert_watch/app.py:286
+msgid "Not After"
+msgstr ""
+
+#: src/cert_watch/app.py:287
+msgid "Days Until Expiry"
+msgstr ""
+
+#: src/cert_watch/app.py:289
+msgid "Connection"
+msgstr ""
+
+#: src/cert_watch/app.py:290
+msgid "Protocol"
+msgstr ""
+
+#: src/cert_watch/app.py:291
+msgid "Cipher Suite"
+msgstr ""
+
+#: src/cert_watch/app.py:292
+msgid "Cipher Bits"
+msgstr ""
+
+#: src/cert_watch/app.py:293
+msgid "HSTS"
+msgstr ""
+
+#: src/cert_watch/app.py:296
+msgid "Subject Alt Names"
+msgstr ""
+
+#: src/cert_watch/app.py:297
+msgid "Meta"
+msgstr ""
+
+#: src/cert_watch/app.py:297
+msgid "Checked At"
+msgstr ""
+
+#: src/cert_watch/app.py:345
+msgid "TLS Certificate Monitor"
+msgstr ""

@@ -1,0 +1,8 @@
+[main]
+host = https://www.transifex.com
+
+[o:danielnylander:p:cert-watch:r:cert-watch-pot]
+file_filter = po/<lang>.po
+source_file = po/cert-watch.pot
+source_lang = en
+type = PO
