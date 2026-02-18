@@ -1,0 +1,138 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Daniel Nylander <po@danielnylander.se>, 2026
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-18 10:19+0100\n"
+"PO-Revision-Date: 2026-02-18 09:21+0000\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>, 2026\n"
+"Language-Team: Swedish (https://app.transifex.com/danielnylander/teams/304962/sv/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sv\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/cert_watch/app.py:117
+msgid "Toggle theme"
+msgstr "Växla tema"
+
+#: src/cert_watch/app.py:122
+msgid "Export JSON"
+msgstr "Exportera JSON"
+
+#: src/cert_watch/app.py:123
+msgid "Export CSV"
+msgstr "Exportera CSV"
+
+#: src/cert_watch/app.py:124
+msgid "About"
+msgstr "Om"
+
+#: src/cert_watch/app.py:128
+msgid "Refresh all"
+msgstr "Uppdatera alla"
+
+#: src/cert_watch/app.py:146
+msgid "Enter domain (e.g. example.com)"
+msgstr "Ange domän (t.ex. exempel.se)"
+
+#: src/cert_watch/app.py:149
+msgid "Add"
+msgstr "Lägg till"
+
+#: src/cert_watch/app.py:153
+msgid "Remove selected"
+msgstr "Ta bort markerade"
+
+#: src/cert_watch/app.py:177 src/cert_watch/app.py:257
+msgid "Select a domain to view details"
+msgstr "Välj en domän för att visa detaljer"
+
+#: src/cert_watch/app.py:185
+msgid "Ready"
+msgstr "Redo"
+
+#: src/cert_watch/app.py:277
+msgid "Error"
+msgstr "Fel"
+
+#: src/cert_watch/app.py:277
+msgid "Checked"
+msgstr "Kontrollerad"
+
+#: src/cert_watch/app.py:280
+msgid "Certificate"
+msgstr "Certifikat"
+
+#: src/cert_watch/app.py:281
+msgid "Common Name"
+msgstr "Servernamn"
+
+#: src/cert_watch/app.py:282
+msgid "Issuer (Org)"
+msgstr "Utfärdare (Org)"
+
+#: src/cert_watch/app.py:283
+msgid "Issuer (CN)"
+msgstr "Utfärdare (CN)"
+
+#: src/cert_watch/app.py:284
+msgid "Serial"
+msgstr "Serienummer"
+
+#: src/cert_watch/app.py:285
+msgid "Not Before"
+msgstr "Inte före"
+
+#: src/cert_watch/app.py:286
+msgid "Not After"
+msgstr "Inte efter"
+
+#: src/cert_watch/app.py:287
+msgid "Days Until Expiry"
+msgstr "Dagar till utgång"
+
+#: src/cert_watch/app.py:289
+msgid "Connection"
+msgstr "Anslutning"
+
+#: src/cert_watch/app.py:290
+msgid "Protocol"
+msgstr "Protokoll"
+
+#: src/cert_watch/app.py:291
+msgid "Cipher Suite"
+msgstr "Chiffersvit"
+
+#: src/cert_watch/app.py:292
+msgid "Cipher Bits"
+msgstr "Chifferbitar"
+
+#: src/cert_watch/app.py:293
+msgid "HSTS"
+msgstr "HSTS"
+
+#: src/cert_watch/app.py:296
+msgid "Subject Alt Names"
+msgstr "Alternativt namn"
+
+#: src/cert_watch/app.py:297
+msgid "Meta"
+msgstr "Meta"
+
+#: src/cert_watch/app.py:297
+msgid "Checked At"
+msgstr "Kontrollerades"
+
+#: src/cert_watch/app.py:345
+msgid "TLS Certificate Monitor"
+msgstr "Övervaka TLS-certifikat"
