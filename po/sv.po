@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-18 10:19+0100\n"
+"POT-Creation-Date: 2026-02-22 06:25+0100\n"
 "PO-Revision-Date: 2026-02-18 09:21+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>, 2026\n"
 "Language-Team: Swedish (https://app.transifex.com/danielnylander/teams/304962/sv/)\n"
@@ -21,118 +21,146 @@ msgstr ""
 "Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/cert_watch/app.py:117
+#: src/cert_watch/app.py:138
 msgid "Toggle theme"
 msgstr "Växla tema"
 
-#: src/cert_watch/app.py:122
+#: src/cert_watch/app.py:143
 msgid "Export JSON"
 msgstr "Exportera JSON"
 
-#: src/cert_watch/app.py:123
+#: src/cert_watch/app.py:144
 msgid "Export CSV"
 msgstr "Exportera CSV"
 
-#: src/cert_watch/app.py:124
+#: src/cert_watch/app.py:145
 msgid "About"
 msgstr "Om"
 
-#: src/cert_watch/app.py:128
+#: src/cert_watch/app.py:149
 msgid "Refresh all"
 msgstr "Uppdatera alla"
 
-#: src/cert_watch/app.py:146
+#: src/cert_watch/app.py:167
 msgid "Enter domain (e.g. example.com)"
 msgstr "Ange domän (t.ex. exempel.se)"
 
-#: src/cert_watch/app.py:149
+#: src/cert_watch/app.py:170
 msgid "Add"
 msgstr "Lägg till"
 
-#: src/cert_watch/app.py:153
+#: src/cert_watch/app.py:174
 msgid "Remove selected"
 msgstr "Ta bort markerade"
 
-#: src/cert_watch/app.py:177 src/cert_watch/app.py:257
+#: src/cert_watch/app.py:198 src/cert_watch/app.py:278
 msgid "Select a domain to view details"
 msgstr "Välj en domän för att visa detaljer"
 
-#: src/cert_watch/app.py:185
+#: src/cert_watch/app.py:206
 msgid "Ready"
 msgstr "Redo"
 
-#: src/cert_watch/app.py:277
+#: src/cert_watch/app.py:298
 msgid "Error"
 msgstr "Fel"
 
-#: src/cert_watch/app.py:277
+#: src/cert_watch/app.py:298
 msgid "Checked"
 msgstr "Kontrollerad"
 
-#: src/cert_watch/app.py:280
+#: src/cert_watch/app.py:301
 msgid "Certificate"
 msgstr "Certifikat"
 
-#: src/cert_watch/app.py:281
+#: src/cert_watch/app.py:302
 msgid "Common Name"
 msgstr "Servernamn"
 
-#: src/cert_watch/app.py:282
+#: src/cert_watch/app.py:303
 msgid "Issuer (Org)"
 msgstr "Utfärdare (Org)"
 
-#: src/cert_watch/app.py:283
+#: src/cert_watch/app.py:304
 msgid "Issuer (CN)"
 msgstr "Utfärdare (CN)"
 
-#: src/cert_watch/app.py:284
+#: src/cert_watch/app.py:305
 msgid "Serial"
 msgstr "Serienummer"
 
-#: src/cert_watch/app.py:285
+#: src/cert_watch/app.py:306
 msgid "Not Before"
 msgstr "Inte före"
 
-#: src/cert_watch/app.py:286
+#: src/cert_watch/app.py:307
 msgid "Not After"
 msgstr "Inte efter"
 
-#: src/cert_watch/app.py:287
+#: src/cert_watch/app.py:308
 msgid "Days Until Expiry"
 msgstr "Dagar till utgång"
 
-#: src/cert_watch/app.py:289
+#: src/cert_watch/app.py:310
 msgid "Connection"
 msgstr "Anslutning"
 
-#: src/cert_watch/app.py:290
+#: src/cert_watch/app.py:311
 msgid "Protocol"
 msgstr "Protokoll"
 
-#: src/cert_watch/app.py:291
+#: src/cert_watch/app.py:312
 msgid "Cipher Suite"
 msgstr "Chiffersvit"
 
-#: src/cert_watch/app.py:292
+#: src/cert_watch/app.py:313
 msgid "Cipher Bits"
 msgstr "Chifferbitar"
 
-#: src/cert_watch/app.py:293
+#: src/cert_watch/app.py:314
 msgid "HSTS"
 msgstr "HSTS"
 
-#: src/cert_watch/app.py:296
+#: src/cert_watch/app.py:317
 msgid "Subject Alt Names"
 msgstr "Alternativt namn"
 
-#: src/cert_watch/app.py:297
+#: src/cert_watch/app.py:318
 msgid "Meta"
 msgstr "Meta"
 
-#: src/cert_watch/app.py:297
+#: src/cert_watch/app.py:318
 msgid "Checked At"
 msgstr "Kontrollerades"
 
-#: src/cert_watch/app.py:345
+#: src/cert_watch/app.py:366
 msgid "TLS Certificate Monitor"
 msgstr "Övervaka TLS-certifikat"
+
+#: src/cert_watch/app.py:404
+msgid "Welcome"
+msgstr "Välkommen"
+
+#: src/cert_watch/app.py:410
+msgid "Welcome to Certificate Watch"
+msgstr "Välkommen till Certifikatsbevakning"
+
+#: src/cert_watch/app.py:412
+msgid ""
+"Monitor SSL/TLS certificates for expiration and security issues.\n"
+"\n"
+"✓ Track certificate expiry dates\n"
+"✓ Get notifications before certificates expire\n"
+"✓ Scan domains and IP addresses\n"
+"✓ Export reports"
+msgstr ""
+"Övervaka SSL/TLS-certifikat för utgångsdatum och säkerhetsproblem.\n"
+"\n"
+"✓ Spåra certifikatens utgångsdatum\n"
+"✓ Få aviseringar innan certifikaten går ut\n"
+"✓ Sök av domäner och IP-adresser\n"
+"✓ Exportera rapporter"
+
+#: src/cert_watch/app.py:415
+msgid "Get Started"
+msgstr "Kom igång"
