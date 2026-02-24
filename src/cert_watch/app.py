@@ -371,6 +371,7 @@ class CertWatchWindow(Adw.ApplicationWindow):
 class CertWatchApp(Adw.Application):
     def __init__(self):
         super().__init__(application_id=APP_ID, flags=Gio.ApplicationFlags.DEFAULT_FLAGS)
+        GLib.set_application_name(_("Cert Watch"))
 
     def do_activate(self):
         self.settings = _load_settings()
