@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+export PYBUILD_NAME=cert-watch
+
+%:
+	dh $@ --with python3 --buildsystem=pybuild
+
+override_dh_auto_install:
+	dh_auto_install
+	install -D -m 644 data/io.github.yeager.CertWatch.desktop \
+		debian/cert-watch/usr/share/applications/io.github.yeager.CertWatch.desktop
+	install -D -m 644 data/icons/io.github.yeager.CertWatch.svg \
+		debian/cert-watch/usr/share/icons/hicolor/scalable/apps/io.github.yeager.CertWatch.svg
