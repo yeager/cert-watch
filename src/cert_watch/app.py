@@ -3,8 +3,11 @@ import gi
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 from gi.repository import Gtk, Adw, GLib, Gio, Pango
-import ssl, socket, threading, json, csv, io, os, gettext, locale
+import ssl, socket, threading, json, csv, io, os, gettext, locale, logging
 from datetime import datetime, timezone
+
+# Set up logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
 APP_ID = "io.github.yeager.CertWatch"
 _ = gettext.gettext
@@ -78,6 +81,35 @@ def _save_settings(s):
     with open(_settings_path(), "w") as f:
         json.dump(s, f, indent=2)
 
+def _notifications_path():
+    """Get path for storing notification timestamps."""
+    import os
+    xdg = os.environ.get("XDG_CONFIG_HOME", os.path.expanduser("~/.config"))
+    d = os.path.join(xdg, "cert-watch")
+    os.makedirs(d, exist_ok=True)
+    return os.path.join(d, "notifications.json")
+
+def _load_notifications():
+    """Load notification timestamps."""
+    import os, json
+    p = _notifications_path()
+    if os.path.exists(p):
+        try:
+            with open(p) as f:
+                return json.load(f)
+        except (json.JSONDecodeError, IOError):
+            return {}
+    return {}
+
+def _save_notifications(notifications):
+    """Save notification timestamps."""
+    import json
+    try:
+        with open(_notifications_path(), "w") as f:
+            json.dump(notifications, f, indent=2)
+    except IOError:
+        pass
+
 class CertRow(Gtk.ListBoxRow):
     def __init__(self, info):
         super().__init__()
@@ -130,6 +162,8 @@ class CertWatchWindow(Adw.ApplicationWindow):
         self.results = {}
         self.poll_interval = 300  # 5 min
         self.poll_source = None
+        self.notifications = _load_notifications()
+        self.logger = logging.getLogger(__name__)
 
         # Header bar
         header = Adw.HeaderBar()
@@ -140,6 +174,7 @@ class CertWatchWindow(Adw.ApplicationWindow):
         header.pack_end(theme_btn)
         # Menu
         menu = Gio.Menu()
+        menu.append(_("Email Notifications…"), "win.preferences")
         menu.append(_("Export JSON"), "win.export-json")
         menu.append(_("Export CSV"), "win.export-csv")
         menu.append(_("About"), "win.about")
@@ -151,7 +186,13 @@ class CertWatchWindow(Adw.ApplicationWindow):
         header.pack_end(refresh_btn)
 
         # Actions
-        for name, cb in [("export-json", self._export_json), ("export-csv", self._export_csv), ("about", self._show_about)]:
+        actions = [
+            ("preferences", self._show_preferences),
+            ("export-json", self._export_json), 
+            ("export-csv", self._export_csv), 
+            ("about", self._show_about)
+        ]
+        for name, cb in actions:
             action = Gio.SimpleAction.new(name, None)
             action.connect("activate", cb)
             self.add_action(action)
@@ -249,6 +290,10 @@ class CertWatchWindow(Adw.ApplicationWindow):
     def _on_result(self, info):
         domain = info["domain"]
         self.results[domain] = info
+        
+        # Check if we should send email notification
+        self._check_email_notification(info)
+        
         # Update or add row
         child = self.listbox.get_first_child()
         while child:
@@ -351,11 +396,74 @@ class CertWatchWindow(Adw.ApplicationWindow):
             f.write(content)
         self._set_status(f"Exported to {path}")
 
+    def _show_preferences(self, *args):
+        """Show email notification preferences dialog."""
+        try:
+            from .preferences import EmailPreferencesDialog
+            dialog = EmailPreferencesDialog(self, self.get_application().settings, self._on_settings_saved)
+        except ImportError as e:
+            self.logger.error(f"Failed to import preferences dialog: {e}")
+            self._set_status("Error: Could not open preferences")
+
+    def _on_settings_saved(self, new_settings):
+        """Handle saved settings from preferences dialog."""
+        app = self.get_application()
+        app.settings.update(new_settings)
+        _save_settings(app.settings)
+        self._set_status("Email notification settings saved")
+        self.logger.info("Email notification settings updated")
+
+    def _check_email_notification(self, cert_info):
+        """Check if we should send email notification for this certificate."""
+        try:
+            from .email_notifier import EmailNotifier
+            
+            app_settings = self.get_application().settings
+            if not app_settings.get('email_notifications_enabled', False):
+                return
+                
+            notifier = EmailNotifier(app_settings)
+            should_send, warning_days = notifier.should_send_warning(cert_info, self.notifications)
+            
+            if should_send:
+                self._send_email_notification_async(cert_info, warning_days, notifier)
+                
+        except ImportError as e:
+            self.logger.error(f"Failed to import email notifier: {e}")
+        except Exception as e:
+            self.logger.error(f"Error checking email notification: {e}")
+
+    def _send_email_notification_async(self, cert_info, warning_days, notifier):
+        """Send email notification in background thread."""
+        def send_email():
+            try:
+                domain = cert_info['domain']
+                success = notifier.send_warning(cert_info, warning_days)
+                
+                if success:
+                    # Update notification timestamps
+                    notification_key = f"{domain}_{warning_days}d"
+                    self.notifications[notification_key] = datetime.now().isoformat()
+                    _save_notifications(self.notifications)
+                    
+                    # Update UI status
+                    GLib.idle_add(self._set_status, f"Email notification sent for {domain}")
+                    self.logger.info(f"Email notification sent for {domain} ({warning_days} days)")
+                else:
+                    GLib.idle_add(self._set_status, f"Failed to send email notification for {domain}")
+                    self.logger.warning(f"Failed to send email notification for {domain}")
+                    
+            except Exception as e:
+                self.logger.error(f"Error sending email notification for {cert_info['domain']}: {e}")
+                GLib.idle_add(self._set_status, f"Email notification error for {cert_info['domain']}")
+        
+        threading.Thread(target=send_email, daemon=True).start()
+
     def _show_about(self, *args):
         about = Adw.AboutDialog(
             application_name="Cert Watch",
             application_icon=APP_ID,
-            version="0.1.0",
+            version="0.1.5",
             developer_name="Daniel Nylander",
             license_type=Gtk.License.GPL_3_0,
             website="https://github.com/yeager/cert-watch",
@@ -375,6 +483,27 @@ class CertWatchApp(Adw.Application):
 
     def do_activate(self):
         self.settings = _load_settings()
+        
+        # Initialize default email settings if not present
+        email_defaults = {
+            'email_notifications_enabled': False,
+            'smtp_server': '',
+            'smtp_port': 587,
+            'use_tls': True,
+            'smtp_user': '',
+            'smtp_password': '',
+            'from_email': '',
+            'to_emails': [],
+            'warning_days': [7, 3, 1]
+        }
+        
+        for key, default_value in email_defaults.items():
+            if key not in self.settings:
+                self.settings[key] = default_value
+        
+        # Save updated settings
+        _save_settings(self.settings)
+        
         win = self.get_active_window()
         if not win:
             win = CertWatchWindow(self)
