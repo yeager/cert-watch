@@ -1,0 +1,313 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Daniel Nylander <po@danielnylander.se>, 2026
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-30 05:59+0000\n"
+"PO-Revision-Date: 2026-02-18 09:21+0000\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>, 2026\n"
+"Language-Team: Swedish (https://app.transifex.com/danielnylander/teams/304962/sv/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sv\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/cert_watch/app.py:172
+msgid "Toggle theme"
+msgstr "Växla tema"
+
+#: src/cert_watch/app.py:177
+msgid "Email Notifications…"
+msgstr "E-postaviseringar…"
+
+#: src/cert_watch/app.py:178
+msgid "Export JSON"
+msgstr "Exportera JSON"
+
+#: src/cert_watch/app.py:179
+msgid "Export CSV"
+msgstr "Exportera CSV"
+
+#: src/cert_watch/app.py:180
+msgid "About"
+msgstr "Om"
+
+#: src/cert_watch/app.py:184
+msgid "Refresh all"
+msgstr "Uppdatera alla"
+
+#: src/cert_watch/app.py:208
+msgid "Enter domain (e.g. example.com)"
+msgstr "Ange domän (t.ex. exempel.se)"
+
+#: src/cert_watch/app.py:211
+msgid "Add"
+msgstr "Lägg till"
+
+#: src/cert_watch/app.py:215
+msgid "Remove selected"
+msgstr "Ta bort markerade"
+
+#: src/cert_watch/app.py:239 src/cert_watch/app.py:323
+msgid "Select a domain to view details"
+msgstr "Välj en domän för att visa detaljer"
+
+#: src/cert_watch/app.py:247
+msgid "Ready"
+msgstr "Redo"
+
+#: src/cert_watch/app.py:343
+msgid "Error"
+msgstr "Fel"
+
+#: src/cert_watch/app.py:343
+msgid "Checked"
+msgstr "Kontrollerad"
+
+#: src/cert_watch/app.py:346
+msgid "Certificate"
+msgstr "Certifikat"
+
+#: src/cert_watch/app.py:347
+msgid "Common Name"
+msgstr "Servernamn"
+
+#: src/cert_watch/app.py:348
+msgid "Issuer (Org)"
+msgstr "Utfärdare (Org)"
+
+#: src/cert_watch/app.py:349
+msgid "Issuer (CN)"
+msgstr "Utfärdare (CN)"
+
+#: src/cert_watch/app.py:350
+msgid "Serial"
+msgstr "Serienummer"
+
+#: src/cert_watch/app.py:351
+msgid "Not Before"
+msgstr "Inte före"
+
+#: src/cert_watch/app.py:352
+msgid "Not After"
+msgstr "Inte efter"
+
+#: src/cert_watch/app.py:353
+msgid "Days Until Expiry"
+msgstr "Dagar till utgång"
+
+#: src/cert_watch/app.py:355
+msgid "Connection"
+msgstr "Anslutning"
+
+#: src/cert_watch/app.py:356
+msgid "Protocol"
+msgstr "Protokoll"
+
+#: src/cert_watch/app.py:357
+msgid "Cipher Suite"
+msgstr "Chiffersvit"
+
+#: src/cert_watch/app.py:358
+msgid "Cipher Bits"
+msgstr "Chifferbitar"
+
+#: src/cert_watch/app.py:359
+msgid "HSTS"
+msgstr "HSTS"
+
+#: src/cert_watch/app.py:362
+msgid "Subject Alt Names"
+msgstr "Alternativt namn"
+
+#: src/cert_watch/app.py:363
+msgid "Meta"
+msgstr "Meta"
+
+#: src/cert_watch/app.py:363
+msgid "Checked At"
+msgstr "Kontrollerades"
+
+#: src/cert_watch/app.py:474
+msgid "TLS Certificate Monitor"
+msgstr "Övervaka TLS-certifikat"
+
+#: src/cert_watch/app.py:482
+msgid "Cert Watch"
+msgstr "Certifikatsbevakare"
+
+#: src/cert_watch/app.py:534
+msgid "Welcome"
+msgstr "Välkommen"
+
+#: src/cert_watch/app.py:540
+msgid "Welcome to Certificate Watch"
+msgstr "Välkommen till Certifikatsbevakning"
+
+#: src/cert_watch/app.py:542
+msgid ""
+"Monitor SSL/TLS certificates for expiration and security issues.\n"
+"\n"
+"✓ Track certificate expiry dates\n"
+"✓ Get notifications before certificates expire\n"
+"✓ Scan domains and IP addresses\n"
+"✓ Export reports"
+msgstr ""
+"Övervaka SSL/TLS-certifikat för utgångsdatum och säkerhetsproblem.\n"
+"\n"
+"✓ Spåra certifikatens utgångsdatum\n"
+"✓ Få aviseringar innan certifikaten går ut\n"
+"✓ Sök av domäner och IP-adresser\n"
+"✓ Exportera rapporter"
+
+#: src/cert_watch/app.py:545
+msgid "Get Started"
+msgstr "Kom igång"
+
+#: src/cert_watch/preferences.py:26
+msgid "Email Notifications"
+msgstr "E-postaviseringar"
+
+#: src/cert_watch/preferences.py:39
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: src/cert_watch/preferences.py:44
+msgid "Save"
+msgstr "Spara"
+
+#: src/cert_watch/preferences.py:64
+msgid "Enable Email Notifications"
+msgstr "Aktivera e-postaviseringar"
+
+#: src/cert_watch/preferences.py:65
+msgid "Send email alerts when certificates are about to expire"
+msgstr "Skicka e-postlarm när certifikat är på väg att gå ut"
+
+#: src/cert_watch/preferences.py:74
+msgid "SMTP Server Settings"
+msgstr "Inställningar för SMTP-server"
+
+#: src/cert_watch/preferences.py:75
+msgid "Configure your email server settings"
+msgstr "Konfigurera dina inställningar för e-postservern"
+
+#: src/cert_watch/preferences.py:82
+msgid "SMTP Server"
+msgstr "SMTP-server"
+
+#: src/cert_watch/preferences.py:83
+msgid "Hostname of your email server"
+msgstr "Värdnamn för din e-postserver"
+
+#: src/cert_watch/preferences.py:93
+msgid "SMTP Port"
+msgstr "SMTP-port"
+
+#: src/cert_watch/preferences.py:94
+msgid "Usually 587 for TLS or 465 for SSL"
+msgstr "Vanligtvis 587 för TLS eller 465 för SSL"
+
+#: src/cert_watch/preferences.py:102
+msgid "Use TLS Encryption"
+msgstr "Använd TLS-kryptering"
+
+#: src/cert_watch/preferences.py:103
+msgid "Recommended for secure email transmission"
+msgstr "Rekommenderas för säker e-postöverföring"
+
+#: src/cert_watch/preferences.py:111
+msgid "Authentication"
+msgstr "Autentisering"
+
+#: src/cert_watch/preferences.py:118
+msgid "Username/Email"
+msgstr "Användarnamn/E-postadress"
+
+#: src/cert_watch/preferences.py:119
+msgid "Your email address for SMTP authentication"
+msgstr "Din e-postadress för SMTP-autentisering"
+
+#: src/cert_watch/preferences.py:125
+msgid "Enter password or app password"
+msgstr "Ange lösenord eller applösenord"
+
+#: src/cert_watch/preferences.py:128
+msgid "Password"
+msgstr "Lösenord"
+
+#: src/cert_watch/preferences.py:129
+msgid "Use an app-specific password for Gmail/Outlook"
+msgstr "Använd ett app-specifikt lösenord för Gmail/Outlook"
+
+#: src/cert_watch/preferences.py:137
+msgid "Email Addresses"
+msgstr "E-postadresser"
+
+#: src/cert_watch/preferences.py:144
+msgid "From Email"
+msgstr "Från e-postadress"
+
+#: src/cert_watch/preferences.py:145
+msgid "Email address that appears as sender"
+msgstr "E-postadress som visas som avsändare"
+
+#: src/cert_watch/preferences.py:158
+msgid "To Emails"
+msgstr "Till e-postadresser"
+
+#: src/cert_watch/preferences.py:159
+msgid "Comma-separated list of recipient email addresses"
+msgstr "Kommaseparerad lista med mottagarnas e-postadresser"
+
+#: src/cert_watch/preferences.py:167
+msgid "Warning Thresholds"
+msgstr "Tröskelvärden för varning"
+
+#: src/cert_watch/preferences.py:168
+msgid "Configure when to send expiry warnings"
+msgstr "Konfigurera när utgångsvarningar ska skickas"
+
+#: src/cert_watch/preferences.py:179
+msgid "Warning Days"
+msgstr "Antal dagar före varningar"
+
+#: src/cert_watch/preferences.py:180
+msgid "Days before expiry to send warnings (comma-separated)"
+msgstr "Antal dagar före utgång när varningar skickas (kommaseparerade)"
+
+#: src/cert_watch/preferences.py:188 src/cert_watch/preferences.py:298
+#: src/cert_watch/preferences.py:308
+msgid "Send Test Email"
+msgstr "Skicka testmeddelande"
+
+#: src/cert_watch/preferences.py:254
+msgid "Email notifications are disabled"
+msgstr "E-postaviseringar är inaktiverade"
+
+#: src/cert_watch/preferences.py:260
+msgid "Please fill in all required fields"
+msgstr "Fyll i alla nödvändiga fält"
+
+#: src/cert_watch/preferences.py:267
+msgid "Sending..."
+msgstr "Skickar..."
+
+#: src/cert_watch/preferences.py:301
+msgid "Test email sent successfully!"
+msgstr "Testmeddelandet skickades!"
+
+#: src/cert_watch/preferences.py:303
+msgid "Failed to send test email. Check your settings and try again."
+msgstr ""
+"Misslyckades med att skicka testmeddelande. Kontrollera dina inställningar "
+"och försök igen."
